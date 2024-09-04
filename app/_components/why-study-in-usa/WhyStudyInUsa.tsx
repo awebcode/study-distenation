@@ -6,7 +6,7 @@ import ButtonWithArrow from '../ButtonWithArrow'
 
 const WhyStudy = () => {
     return (
-        <div className='py-8  space-y-8'>
+        <div className='md:py-12 py-20  space-y-8'>
             {/* Left side image */}
             <ImageWithContent
                 imageSrc="/assets/app-process/2.png"
@@ -40,7 +40,7 @@ const WhyStudy = () => {
             </ImageWithContent>
 
             {/* Right side image */}
-            <ImageWithContent
+            <div className="py-12"> <ImageWithContent
                 imageSrc="/assets/app-process/1.png"
                 altText="An example image"
                 imagePosition="right"
@@ -49,7 +49,7 @@ const WhyStudy = () => {
             >
                 <Heading align="text-left" parts={[{ text: 'Careers ', isSpan: true, spanColor: 'text-primary' }, { text: ' & Industry' }]} subTitle="One of the most technologically powerful and dynamic countries, USA is the largest & most dominant economy globally. Sectors that empower this world’s most productive economy include Healthcare, Technology, Construction, Retail, Manufacturing, Finance & Insurance and Real Estate. Top jobs with high remuneration prospects for international students include Medicine, Computer & Information Systems Managers, Architectural & Engineering Managers and Marketing & Financial Managers. Standard of living in the USA is among the highest in the world with high per capita income. This nation performs very well in many measures of well-being such as income & wealth, health status, jobs and earnings, education & skills and environmental quality." />
                 <ButtonWithArrow variant="outline">Read More</ButtonWithArrow>
-            </ImageWithContent>
+            </ImageWithContent></div>
 
         </div>
     )

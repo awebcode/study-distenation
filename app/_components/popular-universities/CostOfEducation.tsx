@@ -5,7 +5,7 @@ import ImageWithContent from '../why-study-in-usa/WhyStudyCard'
 
 const CostOfEducation = () => {
   return (
-    <div className='py-8  space-y-8'>
+    <div className='py-12 sm:py-20  space-y-8'>
       {/* Left side image */}
       <ImageWithContent
         imageSrc="/assets/popular-universities/costOfEducation.png"
