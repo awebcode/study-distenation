@@ -8,8 +8,8 @@ import { Button } from '@/components/ui/button';
 import {useAutoAnimate} from '@formkit/auto-animate/react'
 import { ArrowRight, MenuIcon, XIcon } from 'lucide-react';
 import { navLinks } from '@/constants/constants';
-import useHooks from '@/hooks/useHooks';
 
+import {useMediaQuery} from "@/hooks/useMediaQuery"
 
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
     const isActive = (path: string) => pathname === path;
 
     const [animationParent] = useAutoAnimate()
-    const isMobile =useHooks.useMediaQuery('(max-width: 768px)')
+    const isMobile = useMediaQuery("only screen and (max-width : 768px)");
 
     return (
         <nav className="z-50 max-h-[60px] sm:max-h-[100%] bg-gray-200px py-6 shadow-sm">
