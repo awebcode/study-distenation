@@ -68,7 +68,7 @@ const LTRImageWithContent: React.FC<LTRImageWithContentProps> = ({
         >
             {/* Image Section with Animation */}
             <motion.div
-                className={`flex-shrink-0 ${imageSize}`}
+                className={`flex-shrink-0 h-full w-full sm:h-auto sm:w-auto ${imageSize}`}
                 initial={{ opacity: 0, x: imagePosition === 'left' ? -50 : 50 }} // Slide in from left/right
                 animate={{ opacity: 1, x: 0 }} // Animate to normal position
                 transition={{ duration: 0.7, ease: 'easeInOut' }} // Smooth transition
@@ -77,7 +77,7 @@ const LTRImageWithContent: React.FC<LTRImageWithContentProps> = ({
                 <Image
                     src={imageSrc}
                     alt={altText}
-                    className="object-cover h-auto w-full min-w-[280px] sm:h-full sm:w-full"
+                    className="object-cover h-full w-full  sm:h-full sm:w-full rounded-sm"
                     layout="responsive"
                     width={150}
                     height={150}
