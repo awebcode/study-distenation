@@ -49,7 +49,7 @@
      --radius: 0.5rem;
     --input: 20 5.9% 90%;
     --ring: 24.6 95% 53.1%;
-    --radius: 0rem;
+    --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -106,7 +106,7 @@
     @apply flex items-center justify-center
   }
   .custom-prose{
-    @apply prose prose-orange prose-sm sm:prose-lg dark:prose-invert
+    @apply prose prose-orange prose-sm sm:prose-2xl dark:prose-invert
   }
 }
 

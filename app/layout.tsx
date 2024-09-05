@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "./_components/Navbar";
-import Footer from "./_components/footer/Footer";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  variable: "--font-poppins",
-});
+import Navbar from "./_home_components/Navbar";
+import Footer from "./_home_components/footer/Footer";
+import dynamic from "next/dynamic";
+const ScrollToTop = dynamic(() => import("./_reusable-components/ScrollToTop"), { ssr: false })
+import localFont from 'next/font/local'
+const helvetica = localFont({ src: [{ path: './fonts/helvetica-255/Helvetica-Bold.ttf', weight: '700' },{path: './fonts/helvetica-255/Helvetica.ttf', weight: '400'}] })
 
 export const metadata: Metadata = {
   title: "Study Distenation -Asikur",
@@ -24,7 +21,7 @@ export const metadata: Metadata = {
     },
     siteName: "Study Distenation",
     type: "article",
-    url:"https://studydistenation.vercel.app/",
+    url: "https://studydistenation.vercel.app/",
   }
 };
 
@@ -35,10 +32,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="" suppressHydrationWarning>
-      <body className={`${poppins.className}${poppins.variable}`}>
+      <body className={`min-h-screen flex flex-col bg-[#f5f5f5]  ${helvetica.className}`}>
         <Navbar />
-        {children}
-        <Footer/>
+        <div className="flex-grow">  {children}</div>
+        <ScrollToTop />
+      
+  
+        <div className="">  <Footer /></div>
       </body>
     </html>
   );

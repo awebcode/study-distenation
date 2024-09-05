@@ -1,15 +1,15 @@
 import React from 'react'
-import Hero from './_components/Hero'
-import ApplicationProcess from './_components/ApplicationProcess'
-import WhyStudy from './_components/why-study-in-usa/WhyStudyInUsa'
-import PopularUniversities from './_components/popular-universities/PopularUniversites'
-import CostOfEducation from './_components/popular-universities/CostOfEducation'
-import UsaAtGlance from './_components/Usa-at-a-glance/UsaAtGlance'
-import Testimonials from './_components/testimonials/Testimonials'
-import Students_Speak from './_components/students_speak/Students_Speak'
-import CarouselItems from './_components/students_speak/CarouselItems'
-import Faqs from './_components/faqs/Faqs'
-import Blogs from './_components/blogs/Blogs'
+import Hero from './_home_components/Hero'
+import ApplicationProcess from './_home_components/ApplicationProcess'
+import WhyStudy from './_home_components/why-study-in-usa/WhyStudyInUsa'
+import PopularUniversities from './_home_components/popular-universities/PopularUniversites'
+import CostOfEducation from './_home_components/popular-universities/CostOfEducation'
+import UsaAtGlance from './_home_components/Usa-at-a-glance/UsaAtGlance'
+import Testimonials from './_home_components/testimonials/Testimonials'
+import Students_Speak from './_home_components/students_speak/Students_Speak'
+import CarouselItems from './_home_components/students_speak/CarouselItems'
+import Faqs from './_home_components/faqs/Faqs'
+import Blogs from './_home_components/blogs/Blogs'
 
 const page = () => {
   return (
@@ -31,18 +31,18 @@ const page = () => {
       <div className="relative py-6">
         <Students_Speak />
         <div className="z-20 absolute bottom-[0px] w-full flex justify-center">
-        <div className="absolute bottom-[-200px] py-8 space-y-6">  <CarouselItems /></div>
+          <div className="container absolute bottom-[-200px] py-8 space-y-6">  <CarouselItems /></div>
+        </div>
       </div>
-      </div>
-{/* Faqs */}
+      {/* Faqs */}
 
       <div className="container mt-[300px]">
-       <Faqs />
+        <Faqs />
 
-       <Blogs/>
+        <Blogs />
 
 
-     </div>
+      </div>
     </div>
   )
 }

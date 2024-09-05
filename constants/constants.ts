@@ -7,9 +7,9 @@ export const navLinks: NavLink[] = [
     name: "Study Distenation",
     path: "/study-distenation",
     subLinks: [
-      { name: "USA", path: "/distenation/usa" },
-      { name: "UK", path: "/distenation/uk" },
-      { name: "Canada", path: "/distenation/canada" },
+      { name: "USA", path: "/study-distenation/usa" },
+      { name: "UK", path: "/study-distenation/uk" },
+      { name: "Canada", path: "/study-distenation/canada" },
     ],
   },
   {
@@ -33,7 +33,7 @@ export const applicationProcess = [
   { id:3,icon: "/icons/AppProcess/wpf_search.png", content: "University Search" },
   {
     id:4,icon: "/icons/AppProcess/cv.png",
-    content: "Statement of purpose,cv review and edit",
+    content: "Purposes,cv review and edit",
   },
   { id:5,icon: "/icons/AppProcess/university_short.png", content: "University Shortlist" },
   { id:6,icon: "/icons/AppProcess/university_app.png", content: "University Application" },
