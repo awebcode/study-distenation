@@ -63,14 +63,14 @@ const ApplicationProcess = () => {
                                 
                                 )}
                             >
-                                <div className={`flex-center  cursor-pointer ${applicationProcess.length - 1 === index ? "bg-primary" : "bg-white"} p-2 h-[40px] w-[45px] sm:h-[60px] sm:w-[75px] rounded-full border border-dashed border-gray-400 hover:border-primary cool-transition overflow-hidden`}>
+                                <div className={`group flex-center  cursor-pointer ${applicationProcess.length - 1 === index ? "bg-primary" : "bg-white"} p-2 h-[40px] w-[50px] sm:h-[60px] sm:w-[80px] rounded-full border border-dashed border-gray-400 hover:border-primary cool-transition overflow-hidden`}>
                                     {applicationProcess.length - 1 !== index ? <Image
                                         width={32} // Adjust as needed
                                         height={32} // Adjust as needed
                                         src={item.icon}
                                         alt={`Icon ${index}`}
                                         loading="lazy"
-                                        className="object-cover h-5 w-5 md:h-7 md:w-7" // Ensure image covers the container
+                                        className="object-cover h-5 w-5 md:h-7 md:w-7 group-hover:scale-105 cool-transition" // Ensure image covers the container
                                     /> : <Image
                                         width={32} // Adjust as needed
                                         height={32} // Adjust as needed
@@ -78,7 +78,7 @@ const ApplicationProcess = () => {
                                         alt={`Icon ${index}`}
                                         loading="lazy"
                                         layout='responsive'
-                                        className="object-center h-full w-full " // Ensure image covers the container
+                                            className="object-center h-full w-full group-hover:scale-105 cool-transition " // Ensure image covers the container
                                     />}
                                 </div>
                             </div>

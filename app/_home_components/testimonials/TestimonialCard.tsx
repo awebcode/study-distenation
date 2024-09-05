@@ -11,7 +11,7 @@ const TestimonialCard: React.FC<Testimonial & { className?: string }> = ({
 }) => {
     return (
         <div
-            className={` w-full p-8 bg-white rounded-md shadow-lg dark:bg-gray-800 hover:border-b-2 hover:border-primary cool-transition ${className}`}
+            className={` w-full p-8 bg-white rounded-md shadow-lg dark:bg-gray-800 hover:border-b-2 hover:border-primary hover:scale-105 cool-transition ${className}`}
         >
             <div className="p-2"> <Image
                 width={40}

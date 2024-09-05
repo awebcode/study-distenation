@@ -8,7 +8,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, content }) => {
     return (
-        <div  className="flex flex-col items-start justify-center gap-2 md:gap-0 md:items-center md:justify-between bg-white h-auto rounded-lg shadow-md   pb-6 ">
+        <div  className="flex flex-col items-start justify-center gap-2 md:gap-0 md:items-center md:justify-between bg-white h-auto rounded-lg shadow-md   pb-6 hover:scale-105 cool-transition ">
             <Button size={"lg"} className="flex-start text-sm md:text-lg w-full py-6  bg-primary text-white ">{title}</Button>
             <ul className="flex items-start flex-col list-disc px-5 pt-2">
                 {content.map((item, index) => (

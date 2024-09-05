@@ -14,11 +14,11 @@ const CarouselItems = () => {
           opts={{
               align: "center",
           }}
-          className="relative  w-full max-w-[800px] p-2   "
+          className="relative  w-full max-w-[800px] mx-auto p-2   "
       >
           <CarouselContent className=''>
               {carouselItems.map((item) => (
-                  <CarouselItem key={item.id} className="  md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={item.id} className="hover:scale-105 cool-transition  md:basis-1/2 lg:basis-1/3">
                       <CarouselItemCard key={item.id} {...item} />
                   </CarouselItem>
               ))}

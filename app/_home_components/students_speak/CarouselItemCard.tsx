@@ -10,7 +10,7 @@ interface CarouselItemCardProps {
 const CarouselItemCard = ({ name, university, image }: CarouselItemCardProps) => {
     return (
 
-        <div className="p-2  h-full m-auto w-full shadow-md  rounded-sm">
+        <div className="p-2  h-full m-auto w-full shadow-md  rounded-sm ">
                     <Image
                         height={1000}
                         width={1000}
