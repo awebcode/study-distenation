@@ -6,7 +6,7 @@ import { FaComment } from 'react-icons/fa'
 
 const BlogCard = () => {
     return (
-        <div className="max-w-2xl overflow-hidden bg-white shadow-md dark:bg-gray-800 rounded-md">
+        <div className="max-w-2xl overflow-hidden bg-white shadow-md dark:bg-gray-800 rounded-md hover:scale-105 cool-transition">
             <Image height={200} width={200} className={`object-cover w-full h-40 md:h-52`} src={`https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80`} alt="Article" />
 
             <div className="p-4 flex flex-col gap-3">
