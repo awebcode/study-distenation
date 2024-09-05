@@ -77,7 +77,7 @@ const LTRImageWithContent: React.FC<LTRImageWithContentProps> = ({
                 <Image
                     src={imageSrc}
                     alt={altText}
-                    className="object-cover h-auto min-w-[250px] sm:h-full sm:w-full"
+                    className="object-cover h-auto w-full min-w-[280px] sm:h-full sm:w-full"
                     layout="responsive"
                     width={150}
                     height={150}
