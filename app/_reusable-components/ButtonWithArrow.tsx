@@ -19,7 +19,7 @@ const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
     size = "lg",
     onClick,
     className = '',
-    href = '#',
+    href = '',
     variant="default"
 }) => {
     return (
@@ -38,10 +38,10 @@ const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
           variant={variant}
           onClick={onClick}
           className={cn(
-              'w-fit  group flex items-center justify-center rounded-[3px] space-x-2 transition-all duration-300',
+              'w-fit  group flex items-center justify-center rounded-[3px] space-x-2 transition-all duration-300 px-12 py-6',
               className
           )}>
-          <Link className={href} href="#"> <span>{children}</span></Link> <ArrowRight className="w-4 h-4 group-hover:translate-x-1  duration-300" />
+            {href ? <Link className={""} href={href}> <span>{children}</span></Link> : <span>{children}</span>} <ArrowRight className="w-4 h-4 group-hover:translate-x-1  duration-300" />
             </Button>
         </motion.button>
   )
