@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -14,17 +14,34 @@ import {useMediaQuery} from "@/hooks/useMediaQuery"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    
     const pathname=usePathname()
 
     const isActive = (path: string) => pathname === path;
+    const [isVisible, setIsVisible] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     const [animationParent] = useAutoAnimate()
     const isMobile = useMediaQuery("only screen and (max-width : 768px)");
 
     return (
-        <nav ref={animationParent} className="z-50 max-h-[100px] md:max-h-[100%] bg-gray-200px py-6 shadow-sm">
+        <nav ref={animationParent} className={`fixed top-0 w-full z-50 max-h-[100px] md:max-h-full   py-4 shadow-sm ${!isVisible ? 'bg-white' : 'bg-gray-100/80'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
+                <div className="flex justify-between items-center ">
                     {/* Left side logo */}
                     <div className="flex items-center h-24 w-24 sm:h-auto sm:w-auto">
                         <Link href="/">
@@ -33,7 +50,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Center navigation links */}
-                    <div  className="hidden md:flex items-center space-x-4 ">
+                    <div  className="hidden md:flex items-center gap-6 ">
                         {navLinks.map((link) => (
                          
                             <div  key={link.name} className="relative group ">
@@ -46,7 +63,7 @@ const Navbar = () => {
                                         >
                                             {link.name}  <Image height={30} width={30} className="h-auto w-auto group-hover:rotate-180" src="/assets/navbar/toggle-icon.svg" alt="Logo" />
                                         </span>
-                                        <div  className="absolute translate-y-[100%] opacity-0  backdrop-filter  backdrop-blur-sm bg-slate-50 group-hover:translate-y-[-6%] group-hover:opacity-100  shadow-sm rounded mt-2 py-2  w-full min-w-28 cool-transition z-50">
+                                        <div  className="absolute translate-y-[100%] opacity-0  backdrop-filter  backdrop-blur-sm border bg-slate-50/80 group-hover:translate-y-[-6%] group-hover:opacity-100  shadow-sm rounded mt-2 py-2  w-full min-w-28 cool-transition duration-500 z-50">
                                             {link.subLinks.map((subLink) => (
                                                 <Link
                                                     key={subLink.name}
@@ -98,7 +115,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu */}
-            <div  className={`bg-gray-100 z-50 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-150%]'} md:hidden cool-transition`}>
+            <div  className={`bg-gray-100/30 backdrop-blur-md z-50 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-150%]'} md:hidden cool-transition`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     {navLinks.map((link) => (
                         <div key={link.name}>
@@ -127,6 +144,11 @@ const Navbar = () => {
                             )}
                         </div>
                     ))}
+                    <Link href="/enquire-now">
+                        <Button variant={"outline"}  className="w-full py-6 bg-gray-100 border group border-primary text-primary    rounded-[3px] hover:bg-primary hover:text-white cool-transition">
+                            <Link href="/enquire-now">Enquire Now</Link> <ArrowRight className="w-4 h-4 group-hover:translate-x-1  duration-300" />
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </nav>
