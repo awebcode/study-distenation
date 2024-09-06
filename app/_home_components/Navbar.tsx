@@ -63,7 +63,7 @@ const Navbar = () => {
                                         >
                                             {link.name}  <Image height={30} width={30} className="h-auto w-auto group-hover:rotate-180" src="/assets/navbar/toggle-icon.svg" alt="Logo" />
                                         </span>
-                                        <div  className="absolute translate-y-[100%] opacity-0  backdrop-filter  backdrop-blur-sm border bg-slate-50/80 group-hover:translate-y-[-6%] group-hover:opacity-100  shadow-sm rounded mt-2 py-2  w-full min-w-28 cool-transition duration-500 z-50">
+                                        <div className="absolute translate-y-[-100%] group-hover:translate-y-[-6%] group-hover:opacity-100  shadow-sm opacity-0  backdrop-filter  backdrop-blur-sm border bg-slate-50/80  rounded mt-2 py-2   w-full min-w-28 cool-transition duration-500 z-50">
                                             {link.subLinks.map((subLink) => (
                                                 <Link
                                                     key={subLink.name}
