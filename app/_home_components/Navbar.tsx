@@ -94,7 +94,7 @@ const Navbar = () => {
                     {/* Right side button */}
                     <div className="cursor-pointer flex  items-center gap-2 ">
                         <Link href="/enquire-now">
-                            <Button  variant={"outline"} size={isMobile?"sm":"lg"} className="border group border-primary text-primary    rounded-[3px] hover:bg-primary hover:text-white cool-transition">
+                            <Button  variant={"outline"} size={isMobile?"sm":"lg"} className={`border group border-primary text-primary    rounded-[3px] hover:bg-primary hover:text-white cool-transition ${isVisible&&"bg-gray-100"}`}>
                                <Link href="/enquire-now">Enquire Now</Link> <ArrowRight className="w-4 h-4 group-hover:translate-x-1  duration-300" />
                             </Button>
                         </Link>
