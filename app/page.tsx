@@ -14,6 +14,7 @@ import Blogs from './_home_components/blogs/Blogs'
 const page = () => {
   return (
     <div className=''>
+      
       <Hero />
       <div className="container">
         <ApplicationProcess />

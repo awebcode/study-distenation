@@ -5,6 +5,7 @@ import Footer from "./_home_components/footer/Footer";
 import dynamic from "next/dynamic";
 const ScrollToTop = dynamic(() => import("./_reusable-components/ScrollToTop"), { ssr: false })
 import localFont from 'next/font/local'
+// import NestedNavbar from "./_home_components/NestedNavbar";
 const helvetica = localFont({ src: [{ path: './fonts/helvetica-255/Helvetica-Bold.ttf', weight: '700' },{path: './fonts/helvetica-255/Helvetica.ttf', weight: '400'}] })
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en" className="" suppressHydrationWarning>
       <body className={`min-h-screen flex flex-col bg-[#f5f5f5]  ${helvetica.className}`}>
         <Navbar />
+        {/* <NestedNavbar/> */}
         <div className="flex-grow">  {children}</div>
         <ScrollToTop />
       
